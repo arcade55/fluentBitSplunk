@@ -1,0 +1,15 @@
+kubectl create ns splunk
+
+kubectl -n splunk run splunk  --image=splunk/splunk:latest --env=SPLUNK_START_ARGS=--accept-license --env=SPLUNK_PASSWORD=Splunk@123456
+
+kubectl expose pod splunk --port=8000 --name=splunk-admin -n splunk
+
+kubectl expose pod splunk --port=8088 --name=splunk-hec -n splunk
+
+kubectl -n splunk port-forward service/splunk-admin 8000
+
+
+http://localhost:8000
+
+
+

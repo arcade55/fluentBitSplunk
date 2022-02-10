@@ -1,0 +1,17 @@
+go get https://github.com/fluent/helm-charts.git
+
+
+ ## https://docs.fluentbit.io/manual/pipeline/outputs
+  outputs: |
+    [OUTPUT]
+        Name splunk 
+        Match kube.* 
+        Host splunk-hec.splunk.svc.cluster.local
+        Port 8088
+        Splunk_Token 
+        TLS On 
+        TLS.Verify Off 
+
+helm install fluent-bit .
+
+kubectl apply -f busyboxstdout.yaml
