@@ -1,4 +1,4 @@
-go get https://github.com/fluent/helm-charts.git
+git clone https://github.com/fluent/helm-charts.git
 
 
  ## https://docs.fluentbit.io/manual/pipeline/outputs
